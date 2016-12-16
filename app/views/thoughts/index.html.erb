@@ -1,0 +1,14 @@
+<h1>ALL THOUGHTS</h1>
+
+<%= link_to "Make a New Thought", new_thought_path %>
+
+</br>
+<% @thoughts.each do |thought|%>
+<div class= "card">
+
+<p>Title: <%=thought.description%></p>
+<p>Category: <%=thought.category%> </p>
+<button><%= link_to 'Edit', edit_thought_path(thought) %> </button>
+<button> <%= link_to "Destroy", thought, method: :delete, data:{confirm: "Are you sure?"} %> </button>
+</div>
+  <%end%>
